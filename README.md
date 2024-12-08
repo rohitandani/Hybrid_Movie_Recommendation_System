@@ -9,15 +9,6 @@ index.html: Template for the home page where users can input their data.
 
 recommendations.html: Template for displaying the recommended movies.
 
-static/: Directory for static files like CSS and JavaScript.
-
-css/: Subdirectory for CSS files.
-
-styles.css: Custom CSS styles (if any).
-
-js/: Subdirectory for JavaScript files.
-
-scripts.js: Custom JavaScript scripts (if any).
 
 data/: Directory for data files.
 
@@ -28,3 +19,7 @@ movies.csv: The dataset containing movie details.
 tags.csv: The dataset containing movie tags.
 
 requirements.txt: A text file listing the Python packages required for the project. This is useful for setting up the project environment.
+
+**Execution :- git clone https://github.com/rohitandani/Hybrid_Movie_Recommendation_System.git
+             cd Hybrid_Movie_Recommendation_System/ml-latest-small
+            pip install -r requirements.txt**
