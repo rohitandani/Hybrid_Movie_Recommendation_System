@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommended Movies</h1>
+    {% for table in tables %}
+        {{ titles[loop.index0] }}
+        {{ table|safe }}
+    {% endfor %}
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>
