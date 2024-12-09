@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommendations</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Recommended Movies</h1>
     {% for table in tables %}
-        {{ titles[loop.index0] }}
-        {{ table|safe }}
+        <div>{{ titles[loop.index0] }}</div>
+        {{ table | safe }}
     {% endfor %}
-    <br>
-    <a href="/">Go Back</a>
+    
+    <h2>User Similarity Heatmap</h2>
+    <img src="data:image/png;base64,{{ user_item_heatmap }}" alt="User Similarity Heatmap">
+
+    <h2>Item Similarity Heatmap</h2>
+    <img src="data:image/png;base64,{{ item_item_heatmap }}" alt="Item Similarity Heatmap">
 </body>
 </html>
