@@ -4,18 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .content {
+            margin: 20px;
+        }
+        .table-container {
+            margin: 20px auto;
+            width: 80%;
+        }
+        .heatmap {
+            text-align: center;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Recommended Movies</h1>
-    {% for table in tables %}
-        <div>{{ titles[loop.index0] }}</div>
-        {{ table | safe }}
-    {% endfor %}
-    
-    <h2>User Similarity Heatmap</h2>
-    <img src="data:image/png;base64,{{ user_item_heatmap }}" alt="User Similarity Heatmap">
+    <div class="content">
+        <h1>Recommended Movies</h1>
+        <div class="table-container">
+            {% for table in tables %}
+                <div>{{ titles[loop.index0] }}</div>
+                {{ table | safe }}
+            {% endfor %}
+        </div>
+        
+        <h2>User Similarity Heatmap</h2>
+        <div class="heatmap">
+            <img src="data:image/png;base64,{{ user_item_heatmap }}" alt="User Similarity Heatmap">
+        </div>
 
-    <h2>Item Similarity Heatmap</h2>
-    <img src="data:image/png;base64,{{ item_item_heatmap }}" alt="Item Similarity Heatmap">
+        <h2>Item Similarity Heatmap</h2>
+        <div class="heatmap">
+            <img src="data:image/png;base64,{{ item_item_heatmap }}" alt="Item Similarity Heatmap">
+        </div>
+    </div>
 </body>
 </html>
